@@ -1,0 +1,28 @@
+server:
+  port: 5001
+spring:
+  application:
+    name: product-server
+  cloud:
+    nacos:
+      server-addr: localhost:8848 # 注册中心的URL
+      username: nacos
+      password: printfzx1023.@
+    sentinel:
+      transport:
+        dashboard: localhost:8080 #配置Sentinel dashboard地址
+        port: 8719
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://localhost:3306/eshop?characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 20001023
+feign:
+  sentinel:
+    enabled: true # 激活Sentinel对Feign的支持
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  global-config:
+#    db-config:
+#      id-type: auto

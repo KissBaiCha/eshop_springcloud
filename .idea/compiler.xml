@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eshop-gateway-server" />
+        <module name="Model" />
+        <module name="eshop-product-server" />
+        <module name="eshop-customer-server" />
+        <module name="eshop-order-server" />
+        <module name="nacos-config" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Model" options="-parameters" />
+      <module name="eshop-customer-server" options="-parameters" />
+      <module name="eshop-gateway-server" options="-parameters" />
+      <module name="eshop-order-server" options="-parameters" />
+      <module name="eshop-product-server" options="-parameters" />
+      <module name="nacos-config" options="-parameters" />
+    </option>
+  </component>
+</project>
