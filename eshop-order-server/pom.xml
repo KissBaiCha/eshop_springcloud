@@ -27,6 +27,13 @@
             <artifactId>Model</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!--     seata   -->
+        <dependency>
+            <groupId>io.seata</groupId>
+            <artifactId>seata-spring-boot-starter</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+        <!--   nacos config     -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>

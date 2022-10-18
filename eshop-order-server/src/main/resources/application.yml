@@ -1,0 +1,52 @@
+server:
+  port: 6001
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080 #配置Sentinel dashboard地址
+        port: 8719
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://localhost:3306/eshop?characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 20001023
+feign:
+  sentinel:
+    enabled: true # 激活Sentinel对Feign的支持
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+seata:
+  enabled: true
+  # Seata 应用编号，默认为 ${spring.application.name}
+  application-id: ${spring.application.name}
+  # Seata 事务组编号，用于 TC 集群名
+  tx-service-group: ${spring.application.name}-group
+  # 关闭自动代理
+  enable-auto-data-source-proxy: true
+  # 服务配置项
+  service:
+    # 虚拟组和分组的映射
+    vgroup-mapping:
+      seata-user-group: default
+  config:
+    # support: nacos, consul, apollo, zk, etcd3
+    type: nacos
+    nacos:
+      server-addr: localhost:8888
+      namespace: 2bfd5db2-8a69-494e-a9c4-5e158b9bc468
+      group: zx
+      username: nacos
+      password: nacos
+  registry:
+    # support: nacos, eureka, redis, zk, consul, etcd3, sofa
+    type: nacos
+    nacos:
+      application: seata
+      server-addr: 127.0.0.1:8888
+      group: zx
+      namespace: 2bfd5db2-8a69-494e-a9c4-5e158b9bc468
+      username: nacos
+      password: nacos
+#      cluster: default

@@ -5,9 +5,9 @@ spring:
     name: eshop-gateway
   cloud:
     nacos:
-      server-addr: localhost:8848 # 注册中心的URL
+      server-addr: localhost:8888 # 注册中心的URL
       username: nacos
-      password: printfzx1023.@
+      password: nacos
     sentinel:
       transport:
         dashboard: localhost:8080 #配置Sentinel dashboard地址
